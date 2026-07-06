@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+.wedding-details-container {
+  width: 90%;
+  max-width: 500px;
+  margin: 40px auto;
+  text-align: center;
+  font-family: sans-serif; /* Osnovni čitljiv font za informacije */
+  color: #4a4a4a;
+}
+
+/* Stil za glavni veliki datum na vrhu */
+.main-date-row h2 {
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  font-weight: 400;
+  color: #333;
+  margin-bottom: 30px;
+  border-bottom: 1px solid rgba(140, 109, 88, 0.2);
+  padding-bottom: 15px;
+}
+
+/* Grid sistem koji deli ekran na dva jednaka dela */
+.details-grid {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+/* Kreiramo tanku liniju između dve kolone (kao na slici) */
+.details-grid::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  bottom: 0;
+  width: 1px;
+  background-color: rgba(140, 109, 88, 0.3); /* Nežna braon linija */
+}
+
+.details-column {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Satnica (15.00 i 16.30) */
+.details-column .time {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+  letter-spacing: 0.5px;
+}
+
+/* Nazivi crkve i restorana - pisana slova */
+.details-column .location-name {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.9rem;
+  color: #8c6d58;
+  line-height: 1.2;
+}
+
+/* Donji deo sa potpisima i rsvp-om */
+.footer-notes {
+  margin-top: 40px;
+  border-top: 1px solid rgba(140, 109, 88, 0.2);
+  padding-top: 25px;
+}
+
+.signatures {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.9rem;
+  color: #8c6d58;
+  margin: 0 0 15px 0;
+}
+
+.rsvp {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #777;
+  margin: 0;
+}
+
+/* Ikone - ako nemaš spremne sličice crkve i tanjira, 
+   ovaj CSS ostavlja prostor za njih koji možeš zameniti sa <img> tagovima */
+.icon-placeholder {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.7;
+}
+
+.react-icon-style {
+  font-size: 2.2rem;       /* Veličina ikonice */
+  color: #8c6d58;          /* Nežna zemljana boja koja prati tvoju temu */
+  margin-bottom: 12px;     /* Razmak između ikonice i satnice */
+  opacity: 0.85;           /* Malo suptilniji izgled */
+  transition: transform 0.3s ease;
+}
+
+.details-column:hover .react-icon-style {
+  transform: scale(1.08);
+}
+
+/* Optimizacija za male telefone */
+@media (max-width: 375px) {
+  .main-date-row h2 { font-size: 1.1rem; }
+  .details-column .time { font-size: 1.1rem; }
+  .details-column .location-name { font-size: 1.6rem; }
+  .signatures { font-size: 1.5rem; }
+  .rsvp { font-size: 0.75rem; }
+}

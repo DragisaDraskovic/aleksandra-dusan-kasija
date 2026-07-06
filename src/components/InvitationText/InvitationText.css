@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+.invitation-text-container {
+  width: 85%;
+  max-width: 600px;
+  margin: 40px auto 20px auto; /* Centrirano sa lepim razmakom */
+  text-align: center;
+}
+
+.invitation-paragraph {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.8rem;
+  color: #8c6d58; /* Prilagodi boji svoje pozadine */
+  line-height: 1.4;
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.02);
+  margin: 0 0 30px 0; /* 30px razmaka ispod teksta, pre nego što krene slika */
+}
+
+/* Stilovi za glavnu sliku unutar komponente */
+.featured-image-wrapper {
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.featured-image {
+  width: 100%;
+  height: auto;
+  border-radius: 16px; /* Elegantno zaobljene ivice */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); /* Nežna senka */
+  object-fit: cover;
+}
+
+/* Prilagođavanje za manje ekrane mobilnih telefona */
+@media (max-width: 375px) {
+  .invitation-paragraph {
+    font-size: 1.5rem;
+    line-height: 1.3;
+    margin-bottom: 20px;
+  }
+  .invitation-text-container {
+    width: 90%;
+  }
+}

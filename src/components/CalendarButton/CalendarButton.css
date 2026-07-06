@@ -1,0 +1,53 @@
+/* Uvozimo Montserrat font za svaki slučaj ako ova komponenta stoji nezavisno */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap');
+
+.calendar-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 18px 34px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: black;
+  
+  /* PODEŠAVANJE FONTA DA BUDE ISTI KAO ZA DATUM I LOKACIJE */
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;          /* Svedena veličina teksta */
+  letter-spacing: 3px;         /* Isti prostrani razmak između slova */
+  font-weight: 500;            /* Elegantna debljina slova */
+  text-transform: uppercase;   /* Osigurava oficijalna velika slova */
+
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.calendar-button:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.22);
+}
+ 
+/* MOBILE APDEJT */
+@media (max-width: 480px) {
+  .calendar-button {
+    width: 60%;
+    max-width: 320px;
+    
+    /* PRILAGOĐAVANJE ZA MOBILNI: Smanjen font i izbačena Allura */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;        /* Blago smanjeno za mobilni da sve stane u red */
+    letter-spacing: 2px;       /* Prilagođen razmak za užu širinu */
+    
+    padding: 16px 20px;
+    text-decoration: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
