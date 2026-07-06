@@ -67,13 +67,6 @@
 }
 
 /* HOVER */
-.maps-button:hover {
-  transform: translateY(-4px);
-  background: rgba(139, 94, 94, 0.92);
-  color: #fff; /* Menjamo tekst u belu boju na hover zbog boljeg kontrasta sa braon pozadinom */
-  border: 1px solid rgba(255,255,255,0.3);
-  box-shadow: 0 14px 35px rgba(0,0,0,0.22);
-}
 
 /* KLIK */
 .maps-button:active {
