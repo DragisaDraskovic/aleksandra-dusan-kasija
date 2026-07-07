@@ -194,3 +194,48 @@
     border-right-color: var(--border);
   }
 }
+
+/* STIL ZA MUTE DUGME KOJE LEBDI NA EKRANU */
+.mute-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999; /* Osigurava da je dugme uvek ISPOD ili IZNAD svega, dostupno za klik */
+  
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 1px solid rgba(140, 109, 88, 0.3); /* Nežna ivica u boji tvoje teme */
+  background: rgba(255, 255, 255, 0.6); /* Poluprovidna bela pozadina */
+  backdrop-filter: blur(8px); /* Blago zamućenje iza dugmeta za premium izgled */
+  
+  color: #8c6d58; /* Boja ikonice prati temu */
+  font-size: 1.2rem;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.mute-btn:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.mute-btn:active {
+  transform: scale(0.95);
+}
+
+/* Prilagođavanje za telefone da ne smeta previše */
+@media (max-width: 480px) {
+  .mute-btn {
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+}

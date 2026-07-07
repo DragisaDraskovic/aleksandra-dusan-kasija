@@ -11,9 +11,9 @@ const WelcomeScreen = ({ onAnimationComplete }) => {
       setIsFading(true); // Pokrećemo fade-out animaciju
     }, 3000);
 
-    // 2. Nakon što se animacija završi (npr. 800ms), javljamo roditeljskoj komponenti da skloni ekran iz DOM-a
+    // 2. Nakon što se animacija završi, javljamo roditelju da je TAJMER istekao (šaljemo false za muziku)
     const timerRemove = setTimeout(() => {
-      if (onAnimationComplete) onAnimationComplete();
+      if (onAnimationComplete) onAnimationComplete(false); 
     }, 3800);
 
     return () => {
@@ -22,11 +22,11 @@ const WelcomeScreen = ({ onAnimationComplete }) => {
     };
   }, [onAnimationComplete]);
 
-  // Omogućavamo korisniku da preskoči uvod ako klikne na ekran
+  // Korisnik preskače uvod klikom na ekran (šaljemo true jer imamo klik za muziku!)
   const handleSkip = () => {
     setIsFading(true);
     setTimeout(() => {
-      if (onAnimationComplete) onAnimationComplete();
+      if (onAnimationComplete) onAnimationComplete(true);
     }, 800);
   };
 
@@ -44,7 +44,6 @@ const WelcomeScreen = ({ onAnimationComplete }) => {
             loading="eager" 
           />
         </div>
-        {/* Novi deo sa tvojim imenima */}
         <div className="welcome-names">
           Aleksandra, Dušan <br />
           <span className="and-style">&</span> Kasija
